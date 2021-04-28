@@ -76,7 +76,7 @@ class ServerConector {
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
                 },
-                mode: 'no-cors',
+                mode: 'cors',
                 referrerPolicy: 'no-referrer', 
                 insecure: true
             }
