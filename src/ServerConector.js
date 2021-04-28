@@ -73,12 +73,6 @@ class ServerConector {
         let request = new Promise((resolve, reject) => {
             let params = {
                 method: (method == "PATCH") ? 'POST' : method,
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8"
-                },
-                mode: 'cors',
-                referrerPolicy: 'no-referrer', 
-                insecure: true
             }
             if (body) {
                 if (method == "PATCH") {
