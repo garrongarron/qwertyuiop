@@ -77,7 +77,7 @@ class ServerConector {
                     "Content-type": "application/json; charset=UTF-8"
                 },
                 mode: 'cors',
-                referrerPolicy: 'no-referrer', 
+                referrerPolicy: 'strict-origin-when-cross-origin', 
                 insecure: true
             }
             if (body) {
