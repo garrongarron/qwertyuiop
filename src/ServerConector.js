@@ -73,7 +73,7 @@ class ServerConector {
         let request = new Promise((resolve, reject) => {
             let params = {
                 method: (method == "PATCH") ? 'POST' : method
-                , mode: 'no-cors'
+                // , mode: 'no-cors'
             }
             if (body) {
                 if (method == "PATCH") {
