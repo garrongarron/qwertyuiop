@@ -72,7 +72,8 @@ class ServerConector {
     apiClient(method, url, body) {
         let request = new Promise((resolve, reject) => {
             let params = {
-                method: (method == "PATCH") ? 'POST' : method,
+                method: (method == "PATCH") ? 'POST' : method
+                , mode: 'no-cors'
             }
             if (body) {
                 if (method == "PATCH") {
@@ -84,7 +85,7 @@ class ServerConector {
                         method: 'PATCH',
                         id
                     })
-                    
+
                 } else {
                     params.body = JSON.stringify(body)
                 }
