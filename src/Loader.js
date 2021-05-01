@@ -10,9 +10,9 @@ class Loader {
         eventBus.addSuscriber('get.machine', (machine) => {
             this.machine = machine
             let data = JSON.parse(localStorage.getItem('data')) || []
-            let chapter = JSON.parse(localStorage.getItem('chapter')) || 0
+            let chapter = localStorage.getItem('chapter') || '0'
             console.log(chapter);
-            if (chapter == 0) return
+            if (chapter === '0') return
 
             if (data.length > 0) {
                 this.load(data)

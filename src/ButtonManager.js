@@ -54,9 +54,9 @@ class ButtonManager {
 
         landingPage.searcher.addEventListener('click', () => {
             eventBus.dispatchEvent('show.searcher',null)
-            let chapter = JSON.parse(localStorage.getItem('chapter')) || 0
+            let chapter = localStorage.getItem('chapter') || '0'
             console.log(chapter);
-            if (chapter > 0) {
+            if (chapter !== '0') {
                 eventBus.dispatchEvent('save.current.chapter', null)
             }
         })
