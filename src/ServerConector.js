@@ -103,7 +103,6 @@ class ServerConector {
             }
             if (body) {
                 params.body = JSON.stringify(body)
-                console.log(params.body);
             }
             let status = null
             fetch(url, params).then(response => {
