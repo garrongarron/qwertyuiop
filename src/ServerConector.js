@@ -5,8 +5,7 @@ class ServerConector {
         // this.url = (location.origin == 'http://127.0.0.1:5500') ? 'http://0.0.0.0:8080' : location.origin;
         // this.url = 'https://studious-restrictio.000webhostapp.com'
         // this.url = 'http://desarrollodevideojuegos3dconjavascript.42web.io'
-        this.url = 'http://localhost:3000'
-
+        this.url = 'https://samugarron.herokuapp.com'
     }
     start() {
 
