@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+:root {
+    --main-bg: #333;
+    --primary-color: #5f9ea0;
+    --primary-color-light: #99c1c2;
+    --header-height: 5vw;
+}
+
+/* body */
+
+body {
+    background-color: var(--main-bg);
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+/* header */
+
+header {
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+header>ul {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+header>ul>li, header>div {
+    text-align: center;
+    height: 3em;
+    color: var(--primary-color-light);
+    transition: all .25s ease;
+    width: 100%;
+    line-height: 3em;
+    border-top: 1px solid var(--primary-color-light);
+}
+
+header>div {
+    color: white;
+    text-shadow: 0 0 2px black;
+}
+
+@media (min-width: 850px) {
+    header {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+    header>ul {
+        display: flex;
+        flex-flow: row;
+        max-width: 600px;
+    }
+    header>ul>li {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    header>ul>li, header>div {
+        width: auto;
+    }
+    header>div>span {
+        display: none !important;
+    }
+}
+
+header>ul>li:hover {
+    color: white;
+}
+
+header>div {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header>div>h1 {
+    font-size: 1em;
+    padding-left: 1em;
+}
+
+header>div>span {
+    height: 1em;
+    width: 2em;
+    font-size: 2em;
+    color: var(--primary-color-light);
+    transition: all .25s ease;
+}
+
+header>div>span:hover {
+    color: white;
+}
+
+/* imagen */
+section.image {
+    background-color: var(--primary-color-light);
+    color: white;
+    background-image: url(https://desarrollodevideojuegos3dconjavascript.files.wordpress.com/2021/05/thewarrior-e1619895438884.png);
+    background-size: cover;
+    background-blend-mode: multiply;
+    padding-top: 3em;
+}
+
+section.image>h1, section.image>span {
+    display: block;
+    text-align: center;
+    padding: 1em;
+    padding-bottom: 0em;
+}
+
+section.image>h1 {
+    text-shadow: 0 0 4px black;
+}
+
+section.image>ul {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+@media (min-width: 850px) {
+    section.image {
+        height: 100vh;
+    }
+    section.image>h1, section.image>span {
+        display: block;
+        text-align: center;
+        padding: 1.5em;
+        padding-bottom: 0em;
+        font-size: 2em;
+    }
+    section.image>h1 {
+        font-size: 4em;
+    }
+    section.image>ul {
+        padding-top: 4em;
+        padding-bottom: 4em;
+        flex-flow: row;
+    }
+}
+
+/* card-intro */
+
+section.cards-intro {
+    color: var(--primary-color);
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+section.cards-intro>div {
+    display: flex;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+section.cards-intro>div>* {
+    height: 3em;
+    border: none;
+}
+
+section.cards-intro>div>input {
+    width: 100%;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+section.cards-intro>div>button {
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: var(--primary-color-light);
+    color: white;
+    text-transform: uppercase;
+}
+
+@media (min-width: 750px) {
+    section.cards-intro {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+/* cards */
+
+section.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1em;
+}
+
+@media (min-width: 600px) {
+    section.cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+}
+
+@media (min-width: 800px) {
+    section.cards {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1em;
+    }
+}
+
+div.card>div.img {
+    height: 200px;
+    background-color: var(--primary-color-light);
+    border-radius: 15px 15px 0 0;
+}
+
+div.card>div.data {
+    height: fit-content;
+    background-color: white;
+    border-radius: 0 0 15px 15px;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+div.data>h2, div.data>p, div.data>input, div.data>ul {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+div.data>input {
+    border-radius: 5px;
+    min-width: 100px;
+    border: none;
+    padding: 1em;
+    margin: 1em;
+    margin-bottom: 0;
+    background-color: var(--primary-color);
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+div.data>ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+div.data>ul>li {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-author {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.author {
+    padding-left: .5em;
+    /* display: block; */
+}
+
+.before::before, .price::before {
+    content: "$";
+    padding-left: 1em;
+}
+
+.before {
+    color: red;
+    text-decoration: line-through;
+}
+
+.price {
+    color: green;
+    font-weight: bolder;
+}
+
+/* tiwtch */
+
+section.tiwtch {
+    text-align: center;
+    padding: 1em;
+    padding-top: 0;
+}
+
+/* footer */
+
+footer {
+    bottom: 0;
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    flex-flow: row;
+    background-color: white;
+    position: relative;
+    bottom: 0;
+    color: var(--primary-color);
+}
+
+footer>div {
+    margin: 1em;
+    text-align: center;
+    width: 100%;
+}
