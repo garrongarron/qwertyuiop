@@ -23,7 +23,7 @@ document.querySelectorAll('header>ul>li').forEach(e => {
     }
     if (e.innerText == "BOOK") {
         e.addEventListener('click', () => {
-            window.open("/book.html");
+            window.open("/book.html?c=608d44b27ef351001358798f");
         })
     }
 })
