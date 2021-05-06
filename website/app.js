@@ -1,7 +1,12 @@
+import './Links.js';
+import './Search.js';
 let card = document.querySelector('.card')
 let cardContainer = document.querySelector('.cards')
-for (let index = 0; index < 2; index++) {
-    cardContainer.appendChild(card.cloneNode(true))
+for (let index = 0; index < 10; index++) {
+    let clone = card.cloneNode(true)
+    let h2 = clone.querySelector('h2')
+    h2.innerText += ' '+index
+    cardContainer.appendChild(clone)
 }
 
 // let link = document.createElement('style')
@@ -23,34 +28,5 @@ menuBtn.addEventListener('click', () => {
         document.querySelector('header>ul').style.display = "flex"
     } else {
         document.querySelector('header>ul').style.display = "none"
-    }
-})
-
-document.querySelectorAll('header>ul>li').forEach(e => {
-    if (e.innerText == "CONTACT") {
-        e.addEventListener('click', () => {
-            window.open("https://discord.gg/ve4uhqGWkB");
-        })
-    }
-    if (e.innerText == "VIDEOS") {
-        e.addEventListener('click', () => {
-            window.open("https://www.youtube.com/c/garronargentina?sub_confirmation=1");
-        })
-    }
-    if (e.innerText == "BLOG") {
-        e.addEventListener('click', () => {
-            window.open("https://desarrollodevideojuegos3dconjavascript.wordpress.com");
-        })
-    }
-
-    if (e.innerText == "TWITTER") {
-        e.addEventListener('click', () => {
-            window.open("https://twitter.com/samugarrondev");
-        })
-    }
-    if (e.innerText == "BOOK") {
-        e.addEventListener('click', () => {
-            window.open("/book.html");
-        })
     }
 })

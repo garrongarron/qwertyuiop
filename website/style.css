@@ -4,6 +4,7 @@
     list-style: none;
     box-sizing: border-box;
     outline: none;
+    text-decoration: none;
 }
 
 :root {
@@ -12,6 +13,9 @@
     --primary-color-light: #99c1c2;
     --header-height: 5vw;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 /* body */
 
@@ -19,6 +23,10 @@ body {
     background-color: var(--main-bg);
     font-family: sans-serif;
     font-size: 16px;
+}
+
+.hide{
+    display: none !important;
 }
 
 /* header */
@@ -105,10 +113,14 @@ header>div>span:hover {
 }
 
 /* imagen */
+
 section.image {
     background-color: var(--primary-color-light);
     color: white;
     background-image: url(https://desarrollodevideojuegos3dconjavascript.files.wordpress.com/2021/05/thewarrior-e1619895438884.png);
+    background-image: url(https://cdn.wallpapersafari.com/1/50/3oOCIL.jpg);
+    background-image: url(The-Legend-of-Samu-min.png);
+    background-position: center;
     background-size: cover;
     background-blend-mode: multiply;
     padding-top: 3em;
@@ -120,7 +132,9 @@ section.image>h1, section.image>span {
     padding: 1em;
     padding-bottom: 0em;
 }
-
+section.image>span {
+    text-shadow: 0 0 2px black;
+}
 section.image>h1 {
     text-shadow: 0 0 4px black;
 }
@@ -128,11 +142,28 @@ section.image>h1 {
 section.image>ul {
     display: flex;
     flex-flow: column;
-    width: 100%;
     justify-content: space-around;
+    align-items: center;
+    width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
     text-align: center;
+}
+section.image>ul>li div.ver-mas {
+    border-radius: 5px;
+    min-width: 100px;
+    border: none;
+    padding: 1em;
+    margin-bottom: 0;
+    background-color: var(--primary-color);
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+section.image>ul>li div.ver-mas:hover {
+    background-color: white;
+    color: var(--primary-color);
 }
 
 @media (min-width: 850px) {
@@ -155,6 +186,11 @@ section.image>ul {
         flex-flow: row;
     }
 }
+section.image>ul {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    flex-flow: row;
+}
 
 /* card-intro */
 
@@ -163,8 +199,13 @@ section.cards-intro {
     text-align: center;
     padding-top: 1em;
     padding-bottom: 1em;
+    background-color: var(--primary-color-light);
+    width: 100%;
 }
 
+section.cards-intro>h3 {
+    color: var(--main-bg);
+}
 section.cards-intro>div {
     display: flex;
     padding-top: 1em;
@@ -186,13 +227,13 @@ section.cards-intro>div>input {
 section.cards-intro>div>button {
     padding-left: 1em;
     padding-right: 1em;
-    background-color: var(--primary-color-light);
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--main-bg);
     text-transform: uppercase;
 }
 
 @media (min-width: 750px) {
-    section.cards-intro {
+    section.cards-intro>div {
         width: 50%;
         margin: auto;
     }
@@ -224,6 +265,8 @@ div.card>div.img {
     height: 200px;
     background-color: var(--primary-color-light);
     border-radius: 15px 15px 0 0;
+    background-image: url(The-Legend-of-Samu-min.png);
+    background-size: cover;
 }
 
 div.card>div.data {
@@ -273,11 +316,18 @@ div.data>ul>li {
     height: 2em;
     border-radius: 50%;
     background-color: var(--primary-color);
+    background-image: url(GarronArgentina.png);
+    background-position: center;
+    background-size: cover;
+    /* as */
 }
 
 .author {
     padding-left: .5em;
-    /* display: block; */
+}
+.author a{
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
 .before::before, .price::before {
@@ -321,4 +371,25 @@ footer>div {
     margin: 1em;
     text-align: center;
     width: 100%;
+}
+
+/* social */
+.yt-icon{
+    background: white;
+    width: 70px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-bg);
+    font-size: 10px;
+    font-weight: bold;
+    /* padding: 1px; */
+    margin: auto;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.yt-icon >img{
+    width: 20px;
 }
