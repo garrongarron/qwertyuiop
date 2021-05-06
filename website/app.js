@@ -2,12 +2,34 @@ import './Links.js';
 import './Search.js';
 let card = document.querySelector('.card')
 let cardContainer = document.querySelector('.cards')
-for (let index = 0; index < 10; index++) {
-    let clone = card.cloneNode(true)
-    let h2 = clone.querySelector('h2')
-    h2.innerText += ' '+index
-    cardContainer.appendChild(clone)
-}
+
+fetch('https://samugarron.herokuapp.com/chapter?s=')
+    .then(e => {
+        return e.json()
+    })
+    .then(data => {
+        card.classList.remove('hide')
+        for (let index = 0; index < data.chapters.length; index++) {
+            let info = data.chapters[index]
+            let clone = card.cloneNode(true)
+            let h2 = clone.querySelector('h2')
+            h2.innerText = info.title
+            let p = clone.querySelector('p')
+            p.innerText = info.description
+            clone.querySelector('input').addEventListener('click',()=>{
+                window.open("/book.html?c="+info._id);
+            })
+            cardContainer.appendChild(clone)
+        }
+        card.remove()
+    })
+    
+// for (let index = 0; index < 10; index++) {
+//     let clone = card.cloneNode(true)
+//     let h2 = clone.querySelector('h2')
+//     h2.innerText += ' ' + index
+//     cardContainer.appendChild(clone)
+// }
 
 // let link = document.createElement('style')
 // fetch('/style.css?' + Math.random())

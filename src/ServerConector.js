@@ -117,6 +117,5 @@ class ServerConector {
 
     stop() { }
 }
-
 let serverConector = new ServerConector()
 export default serverConector

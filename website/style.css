@@ -276,7 +276,9 @@ div.card>div.data {
     margin-bottom: 1em;
     text-align: center;
 }
-
+div.data>h2, div.data>p{
+    min-height: 75px;
+}
 div.data>h2, div.data>p, div.data>input, div.data>ul {
     padding-top: 1em;
     padding-left: 1em;
@@ -343,6 +345,12 @@ div.data>ul>li {
 .price {
     color: green;
     font-weight: bolder;
+}
+
+.free {
+    color: green;
+    font-weight: bolder;
+    padding-left: 1em;
 }
 
 /* tiwtch */
